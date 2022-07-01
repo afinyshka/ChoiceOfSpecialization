@@ -15,12 +15,13 @@ void FillArray(string[] array)
 
 void PrintArray(string[] array)
 {
+    Console.Write($"[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i==0) Console.Write($"[{array[i]}, ");
-        else if (i==array.Length-1) Console.Write($"{array[i]}] ");
+        if (i==array.Length-1) Console.Write($"{array[i]}");
         else Console.Write($"{array[i]}, ");
     }
+    Console.Write($"] ");
 }
 
 int FindNewArrayLength(string[] array)
@@ -50,14 +51,10 @@ void FillArrayLessEqualThreeChars(string[] firstArray, string[] finishArray)
 string[] initialArray = CreateArray(5);
 FillArray(initialArray);
 Console.WriteLine();
-Console.Write("Initial array = ");
-PrintArray(initialArray);
-Console.WriteLine();
-int length = FindNewArrayLength(initialArray);
-Console.WriteLine($"length of finish array = {length} ");
-string[] finallArray = CreateArray(length);
+string[] finallArray = CreateArray(FindNewArrayLength(initialArray));
 FillArrayLessEqualThreeChars(initialArray, finallArray);
-Console.Write("Total array = ");
+Console.WriteLine("Initial array -> Total array: ");
+PrintArray(initialArray);
+Console.Write("-> ");
 PrintArray (finallArray);
 Console.WriteLine();
-
