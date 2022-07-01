@@ -48,7 +48,9 @@ void FillArrayLessEqualThreeChars(string[] firstArray, string[] finishArray)
     }
 }
 
-string[] initialArray = CreateArray(5);
+Console.WriteLine("Enter number of initial array elements: ");
+int number = int.Parse(Console.ReadLine() ?? "0");
+string[] initialArray = CreateArray(number);
 FillArray(initialArray);
 Console.WriteLine();
 string[] finallArray = CreateArray(FindNewArrayLength(initialArray));
